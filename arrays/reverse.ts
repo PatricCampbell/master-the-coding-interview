@@ -2,6 +2,10 @@
 // "Hi my name is Patric" should be:
 // 'cirtaP si eman ym iH"
 
+const assert = require('assert');
+
+const myString: string = 'Hi my name is Patric';
+
 const reverse = (s: string): string => {
   let reversedString = '';
   let index = s.length - 1;
@@ -17,4 +21,6 @@ const reverse = (s: string): string => {
   return reversedString;
 };
 
-console.log(reverse("Hi my name is Patric"));
+const correctReversedString: string = 'cirtaP si eman ym iH';
+
+console.log(reverse(myString) === correctReversedString);
