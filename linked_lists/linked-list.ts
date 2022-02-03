@@ -46,11 +46,11 @@ class LinkedList {
   }
 
   toString() {
-    const array = [];
+    const valuesArray = [];
     let currentNode: LinkedListNode | null = this.head;
 
     while (currentNode) {
-      array.push(currentNode.value);
+      valuesArray.push(currentNode.value);
 
       if (currentNode.next) {
         currentNode = currentNode.next;
@@ -59,7 +59,7 @@ class LinkedList {
       }
     }
 
-    return array.toString();
+    return valuesArray.toString();
   }
 
   insert(index: number, value: any) {
@@ -115,6 +115,30 @@ class LinkedList {
     this.length--;
 
     return this;
+  }
+
+  reverse() {
+    let currentNode: LinkedListNode | null = this.head;
+    const valuesArray = [];
+    const reversedLinkedList = new LinkedList(this.tail.value);
+
+    while (currentNode) {
+      valuesArray.push(currentNode.value);
+
+      if (currentNode.next) {
+        currentNode = currentNode.next;
+      } else {
+        currentNode = null;
+      }
+    }
+
+    for (let index = valuesArray.length - 2; index >= 0; index--) {
+      const element = valuesArray[index];
+
+      reversedLinkedList.append(element);
+    }
+
+    return reversedLinkedList;
   }
 }
 
