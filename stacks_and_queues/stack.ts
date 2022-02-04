@@ -21,7 +21,7 @@ class Stack {
     return this.top;
   }
 
-  push(value: any): StackNode {
+  push(value: any): Stack {
     const newTop = new StackNode(value);
 
     if (!this.top) {
@@ -35,7 +35,7 @@ class Stack {
 
     this.length++;
 
-    return newTop;
+    return this;
   }
 
   pop(): any {
