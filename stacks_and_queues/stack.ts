@@ -10,12 +10,10 @@ class StackNode {
 
 class Stack {
   top: StackNode | null;
-  bottom: StackNode | null;
   length: number;
 
   constructor() {
     this.top = null;
-    this.bottom = null;
     this.length = 0;
   }
 
@@ -27,7 +25,6 @@ class Stack {
     const newTop = new StackNode(value);
 
     if (!this.top) {
-      this.bottom = newTop;
       this.top = newTop;
     } else {
       const oldTop = this.top;

@@ -10,7 +10,6 @@ var StackNode = /** @class */ (function () {
 var Stack = /** @class */ (function () {
     function Stack() {
         this.top = null;
-        this.bottom = null;
         this.length = 0;
     }
     Stack.prototype.peek = function () {
@@ -19,7 +18,6 @@ var Stack = /** @class */ (function () {
     Stack.prototype.push = function (value) {
         var newTop = new StackNode(value);
         if (!this.top) {
-            this.bottom = newTop;
             this.top = newTop;
         }
         else {
